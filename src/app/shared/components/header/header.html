@@ -1,0 +1,26 @@
+<section class="header">
+    <nav class="header__menu">
+        <img class="header__img" src="imgs/logo.svg" alt="logo">
+        <div class="search__field">
+            <mat-icon class="search__icon" fontIcon="manage_search"></mat-icon>
+            <input class="search__input" type="search" placeholder="Busque por pratos" (input)="onSearch($event)">
+        </div>
+
+        @if (authService.isAdmin()) {
+        <button class="header__button" routerLink="/menu/new"> <mat-icon fontIcon="add_circle"></mat-icon>
+            Novo prato
+        </button>
+        } @else {
+        <button class="header__button" (click)="openModal()">
+            <mat-icon fontIcon="receipt"></mat-icon>
+            Pedido
+            <span>({{ cartService.cart()?.totalItem|| 0 }})</span>
+        </button>
+        }
+
+
+        <button matIconButton aria-label="Sair" (click)="logout()">
+            <mat-icon>logout</mat-icon>
+        </button>
+    </nav>
+</section>
