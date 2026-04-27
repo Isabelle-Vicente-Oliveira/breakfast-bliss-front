@@ -1,0 +1,34 @@
+<header class="cart__header">
+    <h2 class="dialog__title">Seu Carrinho</h2>
+    <div>
+        <button class="dialog__button-close" mat-icon-button mat-dialog-close aria-label="Fechar carrinho">
+            <mat-icon>close</mat-icon>
+        </button>
+    </div>
+</header>
+
+<mat-dialog-content class="cart">
+    @for (item of cart()?.items; track item.id) {
+    <div class="cart__content">
+        <img class="cart__img " [src]="apiUrl + '/' + item?.menuItem?.imageUrl" alt="">
+        <div class="cart__text">
+            <h3 class="cart__title">{{item?.menuItem?.name}} </h3>
+            <p class="cart__description">{{item?.menuItem?.description}}</p>
+            <div class="cart__detail">
+                <app-button-quantity [idItem]="item?.menuItem?.id!" />
+                <p class="cart__price">{{item?.menuItem?.price | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</p>
+            </div>
+        </div>
+    </div>
+    } @empty {
+    <p class="cart__empty">Seu carrinho está vazio.</p>
+    }
+</mat-dialog-content>
+
+<footer class="cart__footer" mat-dialog-actions align="end">
+    <div class="cart__total">
+        <span>Total:</span>
+        <strong>{{ cart()?.totalPrice | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</strong>
+    </div>
+    <button mat-flat-button class="cart__button-end">Finalizar Compra</button>
+</footer>
