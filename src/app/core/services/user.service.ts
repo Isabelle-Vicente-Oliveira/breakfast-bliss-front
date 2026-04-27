@@ -1,8 +1,12 @@
 import { HttpClient } from "@angular/common/http";
-import { inject } from "@angular/core";
+import { inject, Injectable } from "@angular/core";
 import { CreateDtoUser, User } from "../interfaces/user.interface";
 import { Observable, tap } from "rxjs";
 
+
+@Injectable({
+    providedIn: 'root',
+})
 export class UserService {
     private http = inject(HttpClient);
     private apiUrl = import.meta.env.VITE_BREAKFAST_API
