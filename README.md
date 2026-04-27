@@ -59,9 +59,9 @@ A arquitetura do projeto foi pensada para ser escalável e de fácil manutençã
 <h2 id="instalacao"> 🚀 Instalação e Configuração</h2>
 
  **Instale as dependências:**
-    ```bash
+  ```bash
     npm install
-    ```
+  ```
 
 
 **Iniciar o Projeto**
