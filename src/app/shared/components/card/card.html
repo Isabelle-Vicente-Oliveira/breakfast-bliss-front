@@ -1,0 +1,29 @@
+<mat-card class="card" appearance="outlined">
+    <mat-card-header class="card__header">
+        @if(authService.isAdmin()){
+        <button matIconButton [routerLink]="['/menu/edit', menuItem().id]" aria-label="Editar">
+            <mat-icon>edit</mat-icon>
+        </button>
+        } @else {
+        <button matIconButton aria-label="Favoritar">
+            <mat-icon>favorite</mat-icon>
+        </button>
+        }
+
+    </mat-card-header>
+    <img class="card__img" [src]="apiUrl + '/' + menuItem().imageUrl">
+    <mat-card-content class="card__content" [routerLink]="['/menu/detail', menuItem().id]">
+        <mat-card-title class="card__title">{{ menuItem().name}}</mat-card-title>
+        <p class="card__description">
+            {{ menuItem().description}} </p>
+        <p class="card__price">{{ menuItem().price | currency:'BRL':'symbol':'1.2-2':'pt-BR' }}</p>
+    </mat-card-content>
+
+    @if (!authService.isAdmin()) {
+    <mat-card-actions class="card__fotter">
+        <app-button-quantity [idItem]=" menuItem().id" />
+    </mat-card-actions>
+
+    }
+
+</mat-card>
