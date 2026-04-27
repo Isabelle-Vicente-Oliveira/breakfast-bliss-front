@@ -1,0 +1,39 @@
+<section class="menu-item-details">
+    <header class="menu-item-details__header">
+        <button class="menu-item-details__back-button" type="button" routerLink="/home">
+            <mat-icon>west</mat-icon>
+            Voltar
+        </button>
+    </header>
+
+    <main class="menu-item-details__main">
+        <div class="menu-item-details__banner">
+            <img [src]="apiUrl + '/' + menuItem()?.imageUrl" alt="Prato" class="menu-item-details__img">
+
+        </div>
+        <div class="menu-item-details__text">
+            <h1 class="menu-item-details__title">{{ menuItem()?.name}}</h1>
+            <p class="menu-item-details__description">{{ menuItem()?.description}}</p>
+
+            <div class="menu-item-details__ingredients">
+                @for (item of menuItem()?.ingredients; track item.ingredient.id) {
+                <span class="menu-item-details__ingredient"> {{ item.ingredient.name }}
+                </span>
+                }
+            </div>
+
+
+            @if (authService.isAdmin()) {
+            <button class="menu-item-details__edit-button" [routerLink]="['/menu/edit', menuItem()?.id]">Editar
+                prato</button>
+
+            } @else {
+            <app-button-quantity [idItem]=" menuItem()?.id" />
+            }
+
+
+        </div>
+
+    </main>
+
+</section>
