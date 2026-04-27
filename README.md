@@ -34,7 +34,7 @@ Telas do Admid
 - SCSS: Pré-processador CSS que permite o uso de variáveis, aninhamento e mixins, facilitando a organização dos estilos seguindo a metodologia BEM (Block Element Modifier).
 
 
-<h2 id="estrutura"> Structuring 📂 Estrutura e Organização das Pastas</h2>
+<h2 id="estrutura"> 📂 Estrutura e Organização das Pastas</h2>
 
 A arquitetura do projeto foi pensada para ser escalável e de fácil manutenção, seguindo o padrão de divisões por responsabilidades:
 
