@@ -1,0 +1,14 @@
+<section class="section-cards">
+    @for (grup of menuGrouped(); track grup.name) {
+    <div class="section-cards__container">
+        <h2 class="section-cards__title">{{ grup.name }}</h2>
+        <div class="section-cards__grid-itens">
+            @for (menuItem of grup.itens; track menuItem.id) {
+            <app-card [menuItem]="menuItem"></app-card>
+            }
+        </div>
+    </div>
+    } @empty {
+    <p>Nenhum item encontrado.</p>
+    }
+</section>
