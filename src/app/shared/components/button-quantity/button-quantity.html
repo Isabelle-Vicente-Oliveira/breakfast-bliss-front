@@ -1,0 +1,16 @@
+<div class="button-quantity">
+    <div class="button-quantity__content">
+        <button class="button-quantity__increment" (click)="incrementQuantity()">
+            <mat-icon>add</mat-icon>
+        </button>
+
+        <p>{{localQuantity()}}</p>
+
+        <button class="button-quantity__decrement" (click)="decrementQuantity()">
+            <mat-icon>remove</mat-icon>
+        </button>
+    </div>
+
+    <button class="button-quantity__include" (click)="include()">Inclui</button>
+
+</div>
