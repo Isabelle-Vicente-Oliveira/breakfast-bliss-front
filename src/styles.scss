@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/cdk/overlay-prebuilt.css';
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Island+Moments&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --avocado-950: #426303;
+    --avocado-900: #568203;
+    --avocado-800: #689D06;
+    --dark-900: #0C0C0C;
+    --dark-800: #201D1D;
+
+    --red-900: #BA1313;
+    --red-500: #EB4747;
+    --red-400: #ff6467;
+    --red-50: #F17E7E;
+
+    --light-50: #FFFFFF;
+    --light-100: #FCFBFB;
+
+    --gray-200: #7C7C8A;
+    --gray-50: #f5f5f5;
+    font-size: 62.5%;
+
+}
+
+html,
+body,
+button,
+input {
+    font-family: "Inter", sans-serif;
+    height: 100%;
+}
+
+
+body {
+    background: var(--light-50);
+    min-height: 100dvh;
+}
