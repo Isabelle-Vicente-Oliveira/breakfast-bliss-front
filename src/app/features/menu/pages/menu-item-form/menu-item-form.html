@@ -1,0 +1,104 @@
+<section class="menu">
+    <div class="menu__header">
+        <h1 class="menu__title">
+            {{ mode === 'edit' ? 'Editar Prato' : 'Adicionar Prato'}}
+        </h1>
+        <button class="menu__back-button" type="button" routerLink="/home">
+            <mat-icon>west</mat-icon>
+            Voltar
+        </button>
+    </div>
+
+    <div class="menu__container">
+        <form class="menu__form" [formGroup]="menuItemForm" (ngSubmit)="onSubmit()">
+
+            <div class="menu__form-section menu__form-section--info">
+                <div class="wrapper">
+                    <label class="wrapper__label" for="image">Imagem do Prato</label>
+                    <label class="file-upload" for="image">
+                        <mat-icon class="file-upload__icon">file_upload</mat-icon>
+                        <span class="file-upload__text">
+                            {{ menuItemForm.get('image')?.value ? 'Imagem selecionada' : 'Selecione a imagem' }}
+                        </span>
+                        <input class="file-upload__input" id="image" type="file" (change)="onFileSelect($event)">
+                    </label>
+                </div>
+
+                <div class="wrapper">
+                    <label class="wrapper__label" for="name">Nome do Prato</label>
+                    <input class="wrapper__input" id="name" type="text" placeholder="Ex: Panqueca de Frutas"
+                        formControlName="name">
+                    @if (menuItemForm.get('name')?.invalid && menuItemForm.get('name')?.touched) {
+                    <p class="wrapper__warning">O nome é obrigatório</p>
+                    }
+                </div>
+            </div>
+
+            <div class="menu__form-section menu__form-section--details">
+                <div class="wrapper">
+                    <label class="wrapper__label" for="price">Preço (R$)</label>
+                    <input class="wrapper__input" id="price" type="number" placeholder="0,00" formControlName="price">
+                    @if (menuItemForm.get('price')?.invalid && menuItemForm.get('price')?.touched) {
+                    <p class="wrapper__warning">Informe um preço válido</p>
+                    }
+                </div>
+
+
+                <div class="wrapper">
+                    <label class="wrapper__label" for="category">Categoria</label>
+                    <select class="wrapper__select" id="category" formControlName="category">
+                        <option value="">Selecione uma Categoria</option>
+                        <option value="Refeição" selected>Refeição</option>
+                        <option value="Bebida">Bebida</option>
+                        <option value="Sobremesa">Sobremesa</option>
+                    </select>
+
+                </div>
+
+                <div class="wrapper">
+                    <label class="wrapper__label">Ingredientes</label>
+
+                    <div class="ingredients-container">
+                        @for (name of ingredientDisplayNames; track $index) {
+                        <div class="chip">
+                            <span class="chip__text">{{ name }}</span>
+                            <button type="button" class="chip__remove" (click)="removeIngredient($index)">
+                                &times;
+                            </button>
+                        </div>
+                        }
+
+                        <div class="ingredients-add">
+                            <input class="ingredients-add__input" type="text" placeholder="Adicionar +"
+                                [(ngModel)]="newIngredient" [ngModelOptions]="{standalone: true}"
+                                (keyup.enter)="addIngredient()">
+                            <button type="button" class="ingredients-add__button" (click)="addIngredient()"></button>
+                        </div>
+                    </div>
+
+                    @if (menuItemForm.get('ingredients')?.invalid && menuItemForm.get('ingredients')?.touched) {
+                    <p class="wrapper__warning">Adicione pelo menos um ingrediente</p>
+                    }
+                </div>
+
+            </div>
+
+            <div class="menu__form-section menu__form-section--desc">
+                <div class="wrapper">
+                    <label class="wrapper__label" for="description">Descrição</label>
+                    <textarea class="wrapper__input" id="description" rows="4"
+                        placeholder="Descreva os detalhes do prato..." formControlName="description"></textarea>
+                    @if (menuItemForm.get('description')?.invalid && menuItemForm.get('description')?.touched) {
+                    <p class="wrapper__warning">A descrição é obrigatória</p>
+                    }
+                </div>
+            </div>
+
+            <button class="menu__form-button" type="submit" [disabled]="menuItemForm.invalid">
+                {{ mode === 'edit' ? 'Editar Prato' : 'Salvar Prato'}}
+
+            </button>
+
+        </form>
+    </div>
+</section>

@@ -1,0 +1,227 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 2.4rem;
+        color: var(--dark-900);
+        font-weight: 600;
+    }
+
+    &__back-button {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        background-color: transparent;
+        color: var(--dark-900);
+        border: none;
+    }
+
+    &__form {
+        display: grid;
+        gap: 2rem;
+        grid-template-areas:
+            "info"
+            "details"
+            "desc"
+            "actions";
+    }
+
+    &__form-section--info {
+        grid-area: info;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    &__form-section--details {
+        grid-area: details;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 2rem;
+        align-items: start;
+    }
+
+    &__form-section--desc {
+        grid-area: desc;
+        display: block;
+    }
+
+    &__form-button {
+        grid-area: actions;
+        justify-self: end;
+        display: flex;
+        align-items: center;
+        border: none;
+        gap: 0.8rem;
+        padding: 1.2rem 3rem;
+        border-radius: 0.8rem;
+        background-color: var(--avocado-900);
+        color: white;
+        cursor: pointer;
+        font-size: 1.6rem;
+        transition: filter 0.2s;
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+
+    &__label {
+        font-size: 1.4rem;
+        color: var(--dark-900);
+        font-weight: 500;
+    }
+
+    &__input {
+        font-size: 1.4rem;
+        color: var(--dark-800);
+        background-color: var(--gray-50);
+        border: none;
+        border-radius: 0.8rem;
+        padding: 1.6rem;
+        outline: none;
+
+        &::placeholder {
+            color: var(--gray-200);
+        }
+    }
+
+    &__select {
+        font-size: 1.4rem;
+        color: var(--dark-800);
+        background-color: var(--gray-50);
+        border: none;
+        border-radius: 0.8rem;
+        padding: 1.6rem;
+        outline: none;
+
+        &::placeholder {
+            color: var(--gray-200);
+        }
+    }
+
+    &__warning {
+        font-size: 1.2rem;
+        color: var(--red-900);
+        margin-top: 0.2rem;
+    }
+}
+
+.file-upload {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    background-color: var(--gray-50);
+    border-radius: 0.8rem;
+    padding: 1rem;
+    cursor: pointer;
+    border: 2px transparent;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: var(--gray-100);
+    }
+
+    &__icon {
+        font-size: 3.2rem;
+        height: 3.2rem;
+        width: 3.2rem;
+        color: var(--gray-200);
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        color: var(--gray-200);
+    }
+
+    &__input {
+        display: none;
+    }
+}
+
+.ingredients-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 1.2rem;
+    background-color: var(--gray-50);
+    border-radius: 0.8rem;
+    align-items: center;
+    min-height: 5.4rem;
+}
+
+.chip {
+    display: flex;
+    align-items: center;
+    background-color: var(--dark-800);
+    color: var(--light-50);
+    padding: 0.4rem 1rem;
+    border-radius: 0.6rem;
+    font-size: 1.4rem;
+
+    &__remove {
+        background: none;
+        border: none;
+        color: var(--light-50);
+        margin-left: 0.8rem;
+        cursor: pointer;
+        font-size: 1.6rem;
+    }
+}
+
+.ingredients-add {
+    display: flex;
+    align-items: center;
+    border: 1.5px dashed var(--gray-200);
+    border-radius: 0.6rem;
+    padding: 0.4rem 0.8rem;
+
+    &__input {
+        border: none;
+        background: transparent;
+        outline: none;
+        font-size: 1.4rem;
+        width: 8rem;
+    }
+
+    &__button {
+        background: none;
+        border: none;
+        color: var(--gray-200);
+        cursor: pointer;
+        font-size: 1.8rem;
+        padding-left: 0.5rem;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .menu__form-section--info,
+    .menu__form-section--details {
+        grid-template-columns: 1fr;
+    }
+}
