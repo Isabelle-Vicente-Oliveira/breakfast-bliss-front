@@ -18,7 +18,7 @@ Telas do Cliente
   <img src="public/.github/telas(cliente).gif" alt="Apresentação das telas do projeto (Cliente)" width="100%">
 </p>
 
-Telas do Cliente
+Telas do Admid
 
 <p align="center">
   <img src="public/.github/telas(admin).gif" alt="Apresentação das telas do projeto (Cliente)" width="100%">
