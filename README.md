@@ -18,6 +18,12 @@ Telas do Cliente
   <img src="public/.github/telas(cliente).gif" alt="Apresentação das telas do projeto (Cliente)" width="100%">
 </p>
 
+Telas do Cliente
+
+<p align="center">
+  <img src="public/.github/telas(admin).gif" alt="Apresentação das telas do projeto (Cliente)" width="100%">
+</p>
+
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
 <h2 id="tecnologias"> 🛠️ Tecnologias Utilizadas</h2>
 
