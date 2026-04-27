@@ -1,0 +1,46 @@
+<section class="register">
+    <div class="register__banner">
+        <img class="register__img" src="imgs/logo.svg" alt="logo">
+    </div>
+    <div class="register__container">
+        <form class="register__form" [formGroup]="registerForm" (ngSubmit)="register()">
+            <h1 class="register__title">Crie sua conta</h1>
+
+            <div class="wrapper">
+                <label class="wrapper__label" for="name">Nome Complemento</label>
+                <input class="wrapper__input" id="name" type="text" placeholder="Exemplo: Maria da Silva"
+                    formControlName="name">
+                @if (registerForm.get('name')?.invalid && registerForm.get('name')?.touched) {
+                <p class="wrapper__warning">Nome inválido</p>
+                }
+
+            </div>
+
+            <div class="wrapper">
+                <label class="wrapper__label" for="email">Email</label>
+                <input class="wrapper__input" id="email" type="email" placeholder="Exemplo: exemplo@exemplo.com.br"
+                    formControlName="email">
+                @if (registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
+                <p class="wrapper__warning">Endereço de e-mail inválido</p>
+                }
+            </div>
+
+            <div class="wrapper">
+                <label class="wrapper__label" for="password">Senha</label>
+                <input class="wrapper__input" id="password" type="password" placeholder="Exemplo: B7is."
+                    formControlName="password">
+                @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
+                <p class="wrapper__warning">Senha precisa tem no mínimo 6 caracteres</p>
+                }
+            </div>
+            <button class="register__button" type="submit" [disabled]="registerForm.invalid">
+                Criar conta
+            </button>
+
+            <div class="register__link">
+                <a routerLink="/login" class="register__anchor">Já tenho uma conta</a>
+            </div>
+        </form>
+    </div>
+
+</section>
