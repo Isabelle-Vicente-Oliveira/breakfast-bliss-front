@@ -9,6 +9,9 @@
 
 O Breakfast Bliss é uma plataforma de pedidos online desenvolvida para facilitar a experiência de consumo em restaurantes. O foco do projeto é oferecer uma interface intuitiva e fluida para que os clientes possam navegar pelo cardápio e realizar pedidos em tempo real.
 
+![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
+<h2 id="demonstracao"> 📱 Demonstração</h2>
+
 Telas do Cliente
 
 <p align="center">
