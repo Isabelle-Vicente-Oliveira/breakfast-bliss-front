@@ -1,5 +1,5 @@
 <p align="center"> 
-  <img src=".github/logo.png" alt="Breakfast Bliss Logo" width="80px" height="80px">
+  <img src="public/.github/logo.png" alt="Breakfast Bliss Logo" width="80px" height="80px">
 </p>
 <h1 align="center"> Breakfast Bliss - Front End</h1>
 <h3 align="center"> Sistema para pedidos online de um restaurante </h3>
@@ -11,8 +11,8 @@ O Breakfast Bliss é uma plataforma de pedidos online desenvolvida para facilita
 
 Telas do Cliente
 
-<p align="center"> 
-  <img src=".github/telas(cliente).gif" alt="Apresentação das telas do projeto (Cliente)" width="80px" height="80px">
+<p align="center">
+  <img src="public/.github/telas(cliente).gif" alt="Apresentação das telas do projeto (Cliente)" width="100%">
 </p>
 
 ![-----------------------------------------------------](https://raw.githubusercontent.com/andreasbm/readme/master/assets/lines/rainbow.png)
