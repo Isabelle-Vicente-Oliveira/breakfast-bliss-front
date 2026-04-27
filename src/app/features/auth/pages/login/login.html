@@ -1,0 +1,36 @@
+<section class="login">
+    <div class="login__banner">
+        <img class="login__img" src="imgs/logo.svg" alt="logo">
+    </div>
+    <div class="login__container">
+        <form class="login__form" [formGroup]="loginForm" (ngSubmit)="login()">
+            <h1 class="login__title">Faça login</h1>
+
+            <div class="wrapper">
+                <label class="wrapper__label" for="email">Email</label>
+                <input class="wrapper__input" id="email" type="email" placeholder="Exemplo: exemplo@exemplo.com.br"
+                    formControlName="email">
+                @if (loginForm.get('email')?.invalid && loginForm.get('email')?.touched) {
+                <p class="wrapper__warning">Endereço de e-mail inválido</p>
+                }
+            </div>
+
+            <div class="wrapper">
+                <label class="wrapper__label" for="password">Senha</label>
+                <input class="wrapper__input" id="password" type="password" placeholder="Exemplo: B7is."
+                    formControlName="password">
+                @if (loginForm.get('password')?.invalid && loginForm.get('password')?.touched) {
+                <p class="wrapper__warning">Senha precisa tem no mínimo 6 caracteres</p>
+                }
+            </div>
+            <button class="login__button" type="submit" [disabled]="loginForm.invalid">
+                Entrar
+            </button>
+
+            <div class="login__link">
+                <a routerLink="/register" class="login__anchor">Criar uma conta</a>
+            </div>
+        </form>
+    </div>
+
+</section>
