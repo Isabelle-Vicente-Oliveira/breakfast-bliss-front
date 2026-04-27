@@ -1,0 +1,31 @@
+.toast {
+    padding: 2rem;
+    border-radius: 0.5rem;
+    animation: fadeIn 0.3s;
+
+    &--success {
+        background: var(--light-100);
+        color: var(--dark-900);
+        border-left: 0.5rem solid var(--avocado-950);
+
+    }
+
+    &--error {
+        background: var(--light-100);
+        color: var(--dark-900);
+        border-left: 0.5rem solid var(--red-900);
+
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
